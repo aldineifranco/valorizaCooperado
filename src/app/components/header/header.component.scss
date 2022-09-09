@@ -1,0 +1,23 @@
+.nav-topo{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  list-style: none;
+  background-color: #40B385;
+  height: 69px;
+  padding: 23px 60px;
+  margin: -30px auto 0;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover {
+  color: #B1D34B;
+}
+
+.margin-negativa {
+    margin-top: -30px;
+}
