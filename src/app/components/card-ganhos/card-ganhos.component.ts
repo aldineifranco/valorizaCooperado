@@ -6,32 +6,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-ganhos.component.scss'],
 })
 export class CardGanhosComponent implements OnInit {
+  public textoConsulta: string = 'valor consulta - renda ampla';
+  public percentualIU: string = '6% - IU';
+  public textoIU: string = 'bônus sinistralidade';
+  public percentuaIQA: string = '6% - IQA';
+  public textoIQA: string = 'bônus máximo dos indicadores gerais';
+  public percentuaIndicadoresIndividuais: string = '18% - I.I';
+  public textoIndicadoresIndividuais: string = 'bônus indicadores individuais';
 
   public cardGanhos: Array<{
     titulo: string;
     valorConsulta: number;
     textoConsulta: string;
     percentualIU: string;
-    textopercIU: string;
+    textoIU: string;
     percentuaIQA: string;
-    textopercIQA: string;
+    textoIQA: string;
     percentuaIndicadoresIndividuais: string;
-    textoPerIndicadoresIndividuais: string;
+    textoIndicadoresIndividuais: string;
     valorTotal: number;
-    textoValorTotal: string;
   }> = [
     {
-      titulo: "Valor consulta + bônus total",
+      titulo: 'Valor consulta + bônus total',
       valorConsulta: 90,
-      textoConsulta: "valor consulta - renda ampla",
-      percentualIU: "6% - IU",
-      textopercIU: "bônus sinistralidade",
-      percentuaIQA: "6% - IQA",
-      textopercIQA: "bônus máximo dos indicadores gerais",
-      percentuaIndicadoresIndividuais: "18% - I.I",
-      textoPerIndicadoresIndividuais: "bônus indicadores individuais",
+      textoConsulta: this.textoConsulta,
+      percentualIU: this.percentualIU,
+      textoIU: this.textoIU,
+      percentuaIQA: this.percentuaIQA,
+      textoIQA: this.textoIQA,
+      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
       valorTotal: 117,
-      textoValorTotal: "bônus indicadores individuais",
+    },
+    {
+      titulo:
+        'Valor consulta + bônus máximo dos indicadores gerais e bônus dos indicadores individuais',
+      valorConsulta: 90,
+      textoConsulta: this.textoConsulta,
+      percentualIU: this.percentualIU,
+      textoIU: this.textoIU,
+      percentuaIQA: this.percentuaIQA,
+      textoIQA: this.textoIQA,
+      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+      valorTotal: 111.60,
+    },
+    {
+      titulo: 'Valor consulta + bônus total',
+      valorConsulta: 90,
+      textoConsulta: this.textoConsulta,
+      percentualIU: this.percentualIU,
+      textoIU: this.textoIU,
+      percentuaIQA: this.percentuaIQA,
+      textoIQA: this.textoIQA,
+      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+      valorTotal: 111.60,
     },
   ];
 
