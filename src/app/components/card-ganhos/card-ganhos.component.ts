@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-ganhos.component.scss'],
 })
 export class CardGanhosComponent implements OnInit {
+
   public textoConsulta: string = 'valor consulta - renda ampla';
   public percentualIU: string = '6% - IU';
   public textoIU: string = 'bônus sinistralidade';
@@ -13,7 +14,8 @@ export class CardGanhosComponent implements OnInit {
   public textoIQA: string = 'bônus máximo dos indicadores gerais';
   public percentuaIndicadoresIndividuais: string = '18% - I.I';
   public textoIndicadoresIndividuais: string = 'bônus indicadores individuais';
-
+  public colorValorTotal: boolean = true;
+  
   public cardGanhos: Array<{
     titulo: string;
     valorConsulta: number;
@@ -25,6 +27,7 @@ export class CardGanhosComponent implements OnInit {
     percentuaIndicadoresIndividuais: string;
     textoIndicadoresIndividuais: string;
     valorTotal: number;
+    colorValorTotal?: boolean;
   }> = [
     {
       titulo: 'Valor consulta + bônus total',
@@ -37,6 +40,7 @@ export class CardGanhosComponent implements OnInit {
       percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
       textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
       valorTotal: 117,
+      colorValorTotal: this.colorValorTotal,
     },
     {
       titulo:
@@ -50,6 +54,7 @@ export class CardGanhosComponent implements OnInit {
       percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
       textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
       valorTotal: 111.60,
+    
     },
     {
       titulo: 'Valor consulta + bônus total',
@@ -62,10 +67,13 @@ export class CardGanhosComponent implements OnInit {
       percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
       textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
       valorTotal: 111.60,
+
     },
   ];
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }
