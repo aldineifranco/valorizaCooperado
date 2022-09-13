@@ -1,3 +1,4 @@
+import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-ganhos.component.scss'],
 })
 export class CardGanhosComponent implements OnInit {
-
+  public valorConsulta: number = 90;
   public textoConsulta: string = 'valor consulta - renda ampla';
   public percentualIU: string = '6% - IU';
   public textoIU: string = 'bônus sinistralidade';
@@ -14,8 +15,11 @@ export class CardGanhosComponent implements OnInit {
   public textoIQA: string = 'bônus máximo dos indicadores gerais';
   public percentuaIndicadoresIndividuais: string = '18% - I.I';
   public textoIndicadoresIndividuais: string = 'bônus indicadores individuais';
+
   public colorValorTotal: boolean = true;
-  
+  public iconeSomar: boolean = true;
+  public iconeNaoSomar: boolean = true;
+
   public cardGanhos: Array<{
     titulo: string;
     valorConsulta: number;
@@ -28,10 +32,12 @@ export class CardGanhosComponent implements OnInit {
     textoIndicadoresIndividuais: string;
     valorTotal: number;
     colorValorTotal?: boolean;
+    iconeSomar?: boolean;
+    iconeNaoSomar?: boolean;
   }> = [
     {
       titulo: 'Valor consulta + bônus total',
-      valorConsulta: 90,
+      valorConsulta: this.valorConsulta,
       textoConsulta: this.textoConsulta,
       percentualIU: this.percentualIU,
       textoIU: this.textoIU,
@@ -39,13 +45,16 @@ export class CardGanhosComponent implements OnInit {
       textoIQA: this.textoIQA,
       percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
       textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+
       valorTotal: 117,
       colorValorTotal: this.colorValorTotal,
+      iconeSomar: this.iconeSomar,
     },
+
     {
       titulo:
         'Valor consulta + bônus máximo dos indicadores gerais e bônus dos indicadores individuais',
-      valorConsulta: 90,
+      valorConsulta: this.valorConsulta,
       textoConsulta: this.textoConsulta,
       percentualIU: this.percentualIU,
       textoIU: this.textoIU,
@@ -53,27 +62,109 @@ export class CardGanhosComponent implements OnInit {
       textoIQA: this.textoIQA,
       percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
       textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
-      valorTotal: 111.60,
-    
-    },
-    {
-      titulo: 'Valor consulta + bônus total',
-      valorConsulta: 90,
-      textoConsulta: this.textoConsulta,
-      percentualIU: this.percentualIU,
-      textoIU: this.textoIU,
-      percentuaIQA: this.percentuaIQA,
-      textoIQA: this.textoIQA,
-      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
-      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
-      valorTotal: 111.60,
 
+      valorTotal: 111.6,
+      iconeNaoSomar: this.iconeNaoSomar,
     },
+
+    {
+      titulo:
+        'Valor consulta + bônus máximo dos indicadores gerais e bônus dos indicadores individuais',
+      valorConsulta: this.valorConsulta,
+      textoConsulta: this.textoConsulta,
+      percentualIU: this.percentualIU,
+      textoIU: this.textoIU,
+      percentuaIQA: this.percentuaIQA,
+      textoIQA: this.textoIQA,
+      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+
+      valorTotal: 111.6,
+      iconeSomar: this.iconeSomar,
+    },
+
+    {
+      titulo:
+        'Valor consulta com bônus do IU e com bônus máximo dos indicadores gerais',
+      valorConsulta: this.valorConsulta,
+      textoConsulta: this.textoConsulta,
+      percentualIU: this.percentualIU,
+      textoIU: this.textoIU,
+      percentuaIQA: this.percentuaIQA,
+      textoIQA: this.textoIQA,
+      percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+      textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+
+      valorTotal: 100.80,
+      iconeSomar: this.iconeSomar,
+      },
+    
+      {
+        titulo:
+          'Valor consulta com bônus do IU e com bônus máximo dos indicadores gerais',
+        valorConsulta: this.valorConsulta,
+        textoConsulta: this.textoConsulta,
+        percentualIU: this.percentualIU,
+        textoIU: this.textoIU,
+        percentuaIQA: this.percentuaIQA,
+        textoIQA: this.textoIQA,
+        percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+        textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+  
+        valorTotal: 95.40,
+        iconeSomar: this.iconeSomar,
+      },
+
+      {
+        titulo:
+          'Valor consulta + bônus IQA (indicadores gerais)',
+        valorConsulta: this.valorConsulta,
+        textoConsulta: this.textoConsulta,
+        percentualIU: this.percentualIU,
+        textoIU: this.textoIU,
+        percentuaIQA: this.percentuaIQA,
+        textoIQA: this.textoIQA,
+        percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+        textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+  
+        valorTotal: 95.40,
+        iconeSomar: this.iconeSomar,
+      },
+
+      {
+        titulo:
+          'Valor consulta + bônus IQA (indicadores individuais)',
+        valorConsulta: this.valorConsulta,
+        textoConsulta: this.textoConsulta,
+        percentualIU: this.percentualIU,
+        textoIU: this.textoIU,
+        percentuaIQA: this.percentuaIQA,
+        textoIQA: this.textoIQA,
+        percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+        textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+  
+        valorTotal: 106.2,
+        iconeSomar: this.iconeSomar,
+      },
+
+      {
+        titulo:
+          'Valor consulta sem bônus',
+        valorConsulta: this.valorConsulta,
+        textoConsulta: this.textoConsulta,
+        percentualIU: this.percentualIU,
+        textoIU: this.textoIU,
+        percentuaIQA: this.percentuaIQA,
+        textoIQA: this.textoIQA,
+        percentuaIndicadoresIndividuais: this.percentuaIndicadoresIndividuais,
+        textoIndicadoresIndividuais: this.textoIndicadoresIndividuais,
+  
+        valorTotal: 90,
+        iconeSomar: this.iconeSomar,
+      },
   ];
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

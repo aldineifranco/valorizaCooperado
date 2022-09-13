@@ -1,0 +1,43 @@
+.desabilitar {
+  opacity: .2;
+  text-decoration: line-through;
+}
+
+// $icone: somar;
+// $icone: naoSomar;
+
+// @if $icone == somar {
+//   background-image: "../assets/icones/add_box.svg";
+// } @else if == naoSomar {
+//   background-image: "../assets/icones/add_box.svg";
+// }
+
+.icone-somar {
+  background-image: url("../../../assets/icones/add_box.svg");
+  background-repeat: no-repeat;
+
+}
+
+.icone-nao-somar {
+  background-image: url("../../../assets/icones/add_disabled.svg");
+}
+
+@media (max-width: 768px) {
+  .centralizar-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icone-titulo-responsive {
+    width: 45px;
+  }
+
+  .alinha-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+  }
+
+}
