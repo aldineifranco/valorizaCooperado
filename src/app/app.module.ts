@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardGanhosComponent } from './components/card-ganhos/card-ganhos.component';
+import btBr from '@angular/common/locales/pt'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CardGanhosComponent
+    CardGanhosComponent,
   ],
   imports: [
     BrowserModule,
